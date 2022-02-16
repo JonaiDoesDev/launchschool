@@ -25,4 +25,4 @@ else operation == 'divide'
   answer = number1.to_f() / number2.to_f()
 end
 
-puts answer
+Kernel.puts(answer)
