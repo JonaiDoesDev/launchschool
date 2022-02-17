@@ -1,6 +1,4 @@
-array_of_strings = ["hello", "how are you", "good", "ok good to hear", "alrighty then"]
-
-
+array_of_strings = ['hello', 'how are you', 'good', 'ok good to hear', 'alrighty then']
 
 def concat_the_strings(array_of_strings)
   iterator = 0
@@ -13,4 +11,3 @@ end
 end
 
 p concat_the_strings(array_of_strings)
-
