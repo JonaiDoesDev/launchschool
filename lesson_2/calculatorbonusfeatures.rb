@@ -34,7 +34,7 @@ def operation_to_message(op)
                 end
 
   x =  "Hello I am messing up your program"
-  randometer
+  randometer #this was just a random variable name I used to test whether case would work.
 end
 
 # prompt("Hello, welcome to the calculator. What's your name?")
