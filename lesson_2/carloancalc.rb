@@ -46,12 +46,5 @@
     else prompt("Thats not a valid number. Try again.")
     end
   end
- 
-
-
-puts annual_rate
-puts monthly_rate
-puts loan_term
-puts loan_amount
 
 puts monthly_payment = loan_amount.to_i * (monthly_rate.to_f / (1 - (1 + monthly_rate.to_f)**(-loan_term.to_i)))
