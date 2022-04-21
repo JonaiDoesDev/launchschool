@@ -1,0 +1,45 @@
+PEDAC
+
+P: Understanding the PROBLEM
+E: Examples/Test cases
+D: Data Structures
+A: Algorithm
+C: CODE!!!!
+
+
+P: Understandin the PROBLEM
+
+Three steps:
+
+1. Read the problem description.
+2. Check the test cases, if any.
+3. If any part of the problem is unclear, ask the interviewer or problem requester to clarify the matter.
+
+E: EXAMPLE:
+
+# PROBLEM:
+
+# Given a string, write a method change_me which returns the same
+# string but with all the words in it that are palindromes uppercased.
+
+# change_me("We will meet at noon") == "We will meet at NOON"
+# change_me("No palindromes here") == "No palindromes here"
+# change_me("") == ""
+# change_me("I LOVE my mom and dad equally") == "I LOVE my MOM and DAD equally"
+
+
+input: string
+output: string (not the same object)
+rules: 
+      explicit requirements:
+       - every palindrome in the string must be converted to uppercase. (Reminder: palindome is a word that reads the same forwards and backwards.)
+       - Palindromes are case sensitive ("Dad" is not a palindrome, but "dad" is.)
+
+       implicit requirements:
+       - the returned string shouldn't be the same string object.
+       - if the string is an empty string, the result should be an empty string.
+
+D: DATA STRUCTURES / Algorithm
+
+
+
