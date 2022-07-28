@@ -1,3 +1,16 @@
+def select_fruit
+    fruit = {}
+    counter = 0
+
+    loop do
+      while
+
+end
+
+
+
+
+
 produce = {
   'apple' => 'Fruit',
   'carrot' => 'Vegetable',
