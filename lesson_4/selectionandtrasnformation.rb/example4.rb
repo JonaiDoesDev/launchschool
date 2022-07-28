@@ -16,7 +16,7 @@ def select_fruit(produce_list)
       counter += 1
 end
 
-puts selected_fruits
+ selected_fruits
 end
 
 blahblah = {
