@@ -4,3 +4,46 @@ What is the block's return value in the following code? How is it determined? Al
   puts num
   num.odd?
 end
+
+Lets think about this logically.
+
+any? according to the ruby docs returns true if any elemtn of selft meets a given criterion. 
+
+with no block given and argument, returns true if self has any truthy element, false otherwise.
+
+Example: 
+[nil, 0, false].any? # => true
+
+0 is truthy
+
+[nil, false].any? # => false
+
+no true element in self so returns false.
+
+same here: [].any? # => false
+
+With a block given and no argument, calls the block with each element in self; returns true if the block returns any truthy value, false otherwise:
+
+Example:
+
+[0, 1, 2].any? {|element| element > 1 } # => true
+[0, 1, 2].any? {|element| element > 2 } # => false
+
+If argument obj is given, returns true if obj.=== any element, false otherwise:
+
+['food', 'drink'].any?(/foo/) # => true
+['food', 'drink'].any?(/bar/) # => false
+[].any?(/foo/) # => false
+[0, 1, 2].any?(1) # => true
+[0, 1, 2].any?(3) # => false
+
+As far as the question...
+
+What is the block's return value in the following code? How is it determined? Also, what is the return value of any? in this code and what does it output?
+
+[1, 2, 3].any? do |num|
+  puts num
+  num.odd?
+end
+
+Any will return true since at least one of the items returns true. Now what I have just learned is that it will stop iterating after the first item because it has already evaluated to at least one of the items.

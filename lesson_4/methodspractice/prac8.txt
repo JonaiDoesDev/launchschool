@@ -1,0 +1,23 @@
+How does take work? Is it destructive? How can we find out?
+
+arr = [1, 2, 3, 4, 5]
+arr.take(2)
+
+we can find out by looking at the docs.
+
+According to the docs, returns a new array containg the first n element of self, where n is a non-negative interger, does not modify self.
+
+
+so right off the bat we know it is not destructive, it will return a NEW array. 
+
+Example of how take works:
+
+a = [0, 1, 2, 3, 4, 5]
+a.take(1) # => [0]
+a.take(2) # => [0, 1]
+a.take(50) # => [0, 1, 2, 3, 4, 5]
+a # => [0, 1, 2, 3, 4, 5]
+
+basically it needs an argument, and based on that argument gives you a new array with how many arguments you want in the new array. if argunment is more than the items in the old array it will give you the full array in the form of a new array.
+
+
