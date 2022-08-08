@@ -3,14 +3,5 @@ ages = { "Herman" => 32, "Lily" => 30, "Grandpa" => 5843, "Eddie" => 10, "Marily
 values = []
 
 
-ages.each_value { |value| values.push(value < 100)}
-
-puts values
-
-
-
-
-# added_up = values.sum
-
-# puts added_up
-
+selected_values = ages.keep_if { |key, value| value < 100 }
+puts selected_values
