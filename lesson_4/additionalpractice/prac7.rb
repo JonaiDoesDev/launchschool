@@ -2,14 +2,10 @@ statement = "The Flintstones Rock"
 counting_hash = {}
 
 seperate_strings = statement.chars
-seperate_strings.each do |element| 
-  puts element.count("t") 
 
-end
+seperate_strings.to_h {|item| puts item}
 
-
-
-
+p seperate_strings
 
 
 
@@ -18,7 +14,7 @@ end
 
 # PEDAC
 
-# P - understant the problem / Input; Output
+# P - understand the problem / Input; Output
 # Keep track in a hash of how many times a letter occurs.
 # Input = String
 # Output = a hash; keys are the letters, values are the amount of times a letter occurs
@@ -26,7 +22,7 @@ end
 
 
 # E - Examples/Rules
-#  "F"=>1, "R"=>1, "T"=>1, "c"=>1, "e"=>2, ... 
+#  "F"=>1, "R"=>1, "T"=>1, "c"=>1, "e"=>2, ...
 # has to be in hash form
 
 
@@ -37,7 +33,7 @@ end
 # A - Algorithm
 # 1. start with a string
 # 2. seperate string into different characters and store in an array where each character is its own element
-# 3. add each element to a hash as its own key, 
+# 3. add each element to a hash as its own key,
 # 4. count each element and add them together and place it as the value
 
 
