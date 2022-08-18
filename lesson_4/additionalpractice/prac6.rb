@@ -1,3 +1,5 @@
 flintstones = %w(Fred Barney Wilma Betty BamBam Pebbles)
 
-puts flintstones.map { |name| name[0, 1]  }
+puts flintstones.map { |name| name[0, 3]  }
+
+puts flintstones
