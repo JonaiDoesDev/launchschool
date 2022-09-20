@@ -9,26 +9,12 @@
 
 statement = "The Flintstones Rock"
 counting_hash = {}
-
-<<<<<<< HEAD
 letters = ('A'..'Z').to_a + ('a'..'z').to_a
 
 letters.each do |letter|
   letter_frequency = statement.count(letter)
   counting_hash[letter] = letter_frequency if letter_frequency > 0
 end
-
-puts counting_hash
-=======
-seperate_strings = statement.chars
->>>>>>> 653d52d6ec4978e93de8c6d45b85b779fec6e4b5
-
-seperate_strings.to_h {|item| puts item}
-
-p seperate_strings
-
-
-
 
 
 
