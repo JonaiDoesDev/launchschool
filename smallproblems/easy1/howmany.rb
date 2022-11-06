@@ -8,7 +8,7 @@ vehicles = [
 def test_count(vehicle)
     index = 0
     if vehicle[index] == vehicle[index + 1]
-    print "true"
+    
     else
         print "false"
 end
