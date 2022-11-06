@@ -1,0 +1,59 @@
+How does count treat the block's return value? How can we find out?
+
+['ant', 'bat', 'caterpillar'].count do |str|
+  str.length < 4
+end
+
+1. To find out we need to use the ruby docs. since count is being used(cant think of the right word) on an array we would need to go to the array#count in ruby docs to get more information.
+
+By looking at the docs I see that 
+
+1. Returns a count of specified elements. If there is no argument and no block, returns the count of all elements.
+
+Example: 
+[0, 1, 2].count # => 3
+[].count # => 0
+
+2. With an argument obj, returns the count of elements equal to obj.
+
+example: 
+
+[0, 1, 2, 0].count(0) # => 2
+[0, 1, 2].count(3) # => 0
+
+For the first example with gave it an argument of '0'. count is now looking in our collection for how many zeros there are in the collection. It properly returns, in this example, 2. 
+
+2. With no argument but with block given, calls the block with each element, returns the count of elements for which the block returns a truthy value. 
+
+Example:
+
+[0, 1, 2, 3].count {|element| element > 1} # => 2
+
+Meaning.
+
+|element| <--- in this case would be each of the numbers in the array. Lets start with the first one, 0
+
+element > 1 <--- Here we use the element we are currently iterating over and compare it to greater than 1. In this case this would look like 0 > 1 - which is false.
+
+This process gets repeated for all the elements. So we move on to the next element which is 2. We compare 2 > 1, this time its true. Count is now keeping track(counting) the number of elements it needs to give us at the end of iterating through the collection. 
+
+I skipped the number 1... but that is false
+
+3 > 1 is true so count will count that one too. At the end it tells us that there are two values where the block returns a true value. 
+
+
+Last thing with .count is:
+ With argument obj and a block given, issues a warning, ignores the block, and returns the count of elements eql? to obj
+
+ Example:
+
+ [0, 1, 2, 0]
+ => [0, 1, 2, 0]
+3.0.0 :002 > [0, 1, 2, 0].count(3) {|element| element > 1}
+(irb):2: warning: given block not used
+ => 0
+
+
+ So to answer the original question...How does count treat the block's return value? How can we find out?
+
+ it will return an interger of the values that return true for the given block

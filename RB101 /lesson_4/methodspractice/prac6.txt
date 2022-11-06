@@ -1,0 +1,9 @@
+What is the return value of the following statement? Why?
+
+['ant', 'bear', 'caterpillar'].pop.size
+
+so pop removes and returns the last element if no argument is given. 
+
+in this case ["caterpillar"]
+
+then we are invoking size to it to give us the size (amount of letters in caterpillar)

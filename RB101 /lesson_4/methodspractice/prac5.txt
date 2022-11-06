@@ -1,0 +1,8 @@
+What does shift do in the following code? How can we find out?
+
+hash = { a: 'ant', b: 'bear' }
+hash.shift
+
+.shift removes the first entry of the hash and then returns an array with the removed elements. This should execute to 
+
+[a:, 'ant']
