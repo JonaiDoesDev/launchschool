@@ -4,5 +4,3 @@ def reverse(string)
 end
 
 puts reverse("Jonai is the man")
-
-what
