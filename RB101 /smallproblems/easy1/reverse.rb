@@ -5,4 +5,3 @@ end
 
 puts reverse("Jonai is the man")
 
-i think its working

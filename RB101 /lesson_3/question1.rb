@@ -1,6 +1,6 @@
 numbers = [1, 2, 2, 3]
 
-new_numbers = numbers.uniq #Does mutate the object
+new_numbers = numbers.uniq #Does not mutate the object
 
 puts numbers.inspect
 
