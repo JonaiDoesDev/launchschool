@@ -1,11 +1,8 @@
-arr = [1, 2, 3, 4, 5]
 counter = 0
 
-loop do 
-  arr[counter] += 1
+loop do
   counter += 1
-  break if counter == arr.length
+  next if counter.odd?
+  puts counter
+  break if counter > 5
 end
-
-
-print arr
