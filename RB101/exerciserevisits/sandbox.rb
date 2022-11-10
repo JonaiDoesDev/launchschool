@@ -15,11 +15,8 @@ fruits = ['apple', 'banana', 'pear']
 
 
 def transform(array)
-  teh_s = []
   array.map do |item|
-  mod = item + 's' + ' '
-  teh_s << mod
-  # print teh_s
+  item + "s"
   end
 end
 
