@@ -16,17 +16,23 @@ fruits = ['apple', 'banana', 'pear']
 
 def transform(array)
   teh_s = []
-  array.each do |item|
-  item + "s" + " "
-  # print mod
-  # teh_s.push(mod)
-  print teh_s
+  array.map do |item|
+  mod = item + 's' + ' '
+  teh_s << mod
+  # print teh_s
   end
 end
 
 
 
 
-print transform(fruits)
+puts transform(fruits)
 
 # print fruits
+
+# def transform(array)
+#   teh_s = []
+#   index = 0
+
+#   loop do
+#     array. 
