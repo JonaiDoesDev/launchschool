@@ -1,8 +1,9 @@
-counter = 0
+fruits = ['apple', 'banana', 'pear']
+teh_s = []
 
-loop do
-  counter += 1
-  next if counter.odd?
-  puts counter
-  break if counter > 5
+fruits.each do |item|
+  item + "s" << teh_s
+  
 end
+
+  print teh_s

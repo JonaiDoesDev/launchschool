@@ -1,36 +1,42 @@
+
+=begin
+PEDAC
+
+the problem: 
+Write a method that counts the number of occurrences of each element in a given array.
+
+input: an Array
+output: hash counting the number an item in the array happens. ex; "car" => 4, "truck" => 2, etc 
+        array element would be a key, the number of times it happens would be the value
+
+
+=end
+
+
+
 vehicles = [
-    'car', 'car', 'truck', 'car', 'SUV', 'truck',
-    'motorcycle', 'motorcycle', 'car', 'truck'
-  ]
+  'car', 'car', 'truck', 'car', 'SUV', 'truck',
+  'motorcycle', 'motorcycle', 'car', 'truck'
+]
 
 
+def how_many(array)
+    doubles = {}
 
-# def test_count(vehicle)
-#     totals = {}
-#     index = 0
-#     if vehicle[index] == vehicle[index + 1]
-#     print totals.store(index, 3)
-#     index =+ 1
-
-#     else
-#         print "false"
-# end
-# end
-
-# print test_count(vehicles)
-
-
-def count_occurrences(array)
-    occurrences = {}
-
-    array.uniq.each do |element|
-        occurrences[element] = array.count(element)
+    array.uniq.each do |item|
+    doubles[item] = array.count(item)
     end
 
-    occurrences.each do |element, count|
-        puts "#{element} => #{count}"
-    end    
+    doubles.each do |item, count|
+        puts "#{item} => #{count}"
+    end
+    
+
 end
 
-count_occurrences(vehicles
-)
+
+
+
+
+
+p how_many(vehicles)
