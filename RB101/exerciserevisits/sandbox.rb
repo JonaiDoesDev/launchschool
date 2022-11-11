@@ -1,35 +1,27 @@
-# fruits = ['apple', 'banana', 'pear']
-# teh_s = []
+sentence = "jonai is the man"
 
-# fruits.each do |item|
-#   teh_s << item + "s"
-  
-# end
+def select_vowels(str)
+  selected_chars = ''
+  counter = 0 
 
-#   print teh_s
+  loop do
+    current_char = str[counter]
 
-
-
-fruits = ['apple', 'banana', 'pear']
-
-
-
-def transform(array)
-  array.map do |item|
-  item + "s"
+    if 'aeiouAEIOU'.include?(current_char)
+      selected_chars << current_char
   end
+
+  counter += 1
+  break if counter == str.length
+end
+
+print selected_chars
 end
 
 
 
+sentence = "jonai is the man"
+number_of_vowels = select_vowels(sentence).size
+number_of_vowels
 
-puts transform(fruits)
-
-# print fruits
-
-# def transform(array)
-#   teh_s = []
-#   index = 0
-
-#   loop do
-#     array. 
+# print number_of_vowels
