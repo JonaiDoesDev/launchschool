@@ -105,13 +105,12 @@ produce = {
 
 # select_fruit(produce) # => {"apple"=>"Fruit", "pear"=>"Fruit"}
 
+def select_fruit(product)
+  produce_keys = produce.keys
+  counter = 0
+  select_fruit= {}
 
-select_fruit(hash)
-new_hash = {}
-counter = has
-loop do |key, value|
-  current_iteration = hash[]
-  if hash.value? == "fruit"
-
+  loop do |key, value|
+  break if counter == produce_keys.size
 
 end
