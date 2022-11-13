@@ -127,3 +127,47 @@
 
 # select_fruit(produce)
 
+
+# my_numbers = [1, 4, 3, 7, 2, 6]
+
+# def double_numbers(numbers)
+#   doubled_numbers = []
+#   counter = 0
+
+#   loop do
+#     break if counter == numbers.size
+
+#   current_number = numbers[counter]
+#   doubled = current_number * 2
+#   numbers[counter] = doubled
+
+#   counter += 1
+#   end
+#   p numbers
+# end
+
+# double_numbers(my_numbers)
+# p my_numbers
+
+my_numbers = [1, 4, 3, 7, 2, 6]
+
+def odd_multiply(numbers)
+  doubled_numbers = []
+  counter = 0
+
+  loop do
+    break if counter == numbers.size
+
+    current_number = numbers[counter]
+    if current_number.odd?
+      doubled = current_number * 2
+    end
+    doubled_numbers << doubled
+    counter += 1
+    
+  end
+
+p doubled_numbers
+end
+
+odd_multiply(my_numbers)
