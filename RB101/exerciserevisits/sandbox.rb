@@ -149,25 +149,104 @@
 # double_numbers(my_numbers)
 # p my_numbers
 
-my_numbers = [1, 4, 3, 7, 2, 6]
+# my_numbers = [1, 4, 3, 7, 2, 6]
 
-def odd_multiply(numbers)
-  doubled_numbers = []
-  counter = 0
+# def odd_multiply(numbers)
+#   doubled_numbers = []
+#   counter = 0
 
-  loop do
-    break if counter == numbers.size
+#   loop do
+#     break if counter == numbers.size
 
-    current_number = numbers[counter]
-    if current_number.odd?
-      doubled = current_number * 2
-    end
-    doubled_numbers << doubled
-    counter += 1
+#     current_number = numbers[counter]
+#     if current_number.odd?
+#       doubled = current_number * 2
+#     end
+#     doubled_numbers << doubled
+#     counter += 1
     
-  end
+#   end
 
-p doubled_numbers
+# p doubled_numbers
+# end
+
+# odd_multiply(my_numbers)
+
+# my_numbers = [1, 4, 3, 7, 2, 6]
+
+# def odd_multiply(numbers)
+#   doubled_numbers = []
+#   counter = 0
+
+#   loop do
+#     break if counter == numbers.size
+
+#     current_number = numbers[counter]
+#     current_number *= 2 if current_number[counter].odd?
+#     doubled_numbers << current_number
+#     counter += 1
+    
+#   end
+
+# p doubled_numbers
+# end
+
+# odd_multiply(my_numbers)
+
+# p my_numbers
+
+
+# my_numbers = [1, 4, 3, 7, 2, 6]
+
+# def odd_multiply(numbers)
+#   doubled_numbers = []
+#   counter = 0
+
+#   loop do
+#     break if counter == numbers.size
+
+#     current_number = numbers[counter]
+#     current_number *= 2 if counter.odd?
+#     doubled_numbers << current_number
+#     counter += 1
+    
+#   end
+
+# p doubled_numbers
+# end
+
+# odd_multiply(my_numbers)
+
+# p my_numbers
+
+produce = {
+  'apple' => 'Fruit',
+  'carrot' => 'Vegetable',
+  'pear' => 'Fruit',
+  'broccoli' => 'Vegetable'
+}
+
+
+def general_select(produce_list, selection_criteria)
+  produce_keys = produce_list.keys
+  counter = 0
+  selected_produce = {}
+
+  loop do 
+    break if counter == produce_keys.size
+
+    current_key = produce_keys[counter]
+    current_value = produce_list[current_key]
+
+    if current_value == selection_criteria
+      selected_produce[current_key] = current_value
+    end
+
+    counter += 1
+  end
+  
+  p selected_produce
+  
 end
 
-odd_multiply(my_numbers)
+general_select(produce, "Fruit")
