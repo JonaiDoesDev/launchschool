@@ -219,34 +219,80 @@
 
 # p my_numbers
 
-produce = {
-  'apple' => 'Fruit',
-  'carrot' => 'Vegetable',
-  'pear' => 'Fruit',
-  'broccoli' => 'Vegetable'
-}
+# produce = {
+#   'apple' => 'Fruit',
+#   'carrot' => 'Vegetable',
+#   'pear' => 'Fruit',
+#   'broccoli' => 'Vegetable'
+# }
 
 
-def general_select(produce_list, selection_criteria)
-  produce_keys = produce_list.keys
+# def general_select(produce_list, selection_criteria)
+#   produce_keys = produce_list.keys
+#   counter = 0
+#   selected_produce = {}
+
+#   loop do 
+#     break if counter == produce_keys.size
+
+#     current_key = produce_keys[counter]
+#     current_value = produce_list[current_key]
+
+#     if current_value == selection_criteria
+#       selected_produce[current_key] = current_value
+#     end
+
+#     counter += 1
+#   end
+  
+#   p selected_produce
+  
+# end
+
+# general_select(produce, "Fruit")
+
+# my_numbers = [1, 4, 3, 7, 2, 6]
+
+# def multiply(numbers, operation)
+#   transformed_numbers = []
+#   counter = 0
+  
+#   loop do
+#     break if counter == numbers.size
+
+#     current_number = numbers[counter]
+#     multiplied_number = current_number * operation
+#     transformed_numbers << multiplied_number
+#     counter += 1
+#   end
+
+#   p transformed_numbers
+# end
+
+# multiply(my_numbers, 10)
+
+
+question = 'How many times does a particular character appear in this sentence?'
+
+def select_letter(question, letter)
+  selected_letter = ""
   counter = 0
-  selected_produce = {}
 
   loop do 
-    break if counter == produce_keys.size
+    break if counter == question.size
 
-    current_key = produce_keys[counter]
-    current_value = produce_list[current_key]
-
-    if current_value == selection_criteria
-      selected_produce[current_key] = current_value
-    end
-
+    repeating_letter = question[counter]
+    selected_letter << repeating_letter if repeating_letter == letter
+      # selected_letter << repeating_letter
     counter += 1
   end
-  
-  p selected_produce
-  
+
+  if selected_letter == ''
+    print "No repeating letters"
+  end
+
+
+p selected_letter if selected_letter != ''
 end
 
-general_select(produce, "Fruit")
+p select_letter(question, 'a')
