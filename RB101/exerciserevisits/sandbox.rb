@@ -96,21 +96,34 @@
 
 
 
-produce = {
-  'apple' => 'Fruit',
-  'carrot' => 'Vegetable',
-  'pear' => 'Fruit',
-  'broccoli' => 'Vegetable'
-}
+# produce = {
+#   'apple' => 'Fruit',
+#   'carrot' => 'Vegetable',
+#   'pear' => 'Fruit',
+#   'broccoli' => 'Vegetable'
+# }
 
-# select_fruit(produce) # => {"apple"=>"Fruit", "pear"=>"Fruit"}
+# # select_fruit(produce) # => {"apple"=>"Fruit", "pear"=>"Fruit"}
 
-def select_fruit(product)
-  produce_keys = produce.keys
-  counter = 0
-  select_fruit= {}
+# def select_fruit(produce)
+#   produce_keys = produce.keys #this returns an array of keys
+#   counter = 0
+#   selected_fruits = {}
 
-  loop do |key, value|
-  break if counter == produce_keys.size
+#   loop do
+#   break if counter == produce_keys.size
 
-end
+#   current_key = produce_keys[counter] #because produce keys is now an array we can use index to find the element we need based on index position
+#   current_value = produce[current_key]
+
+#   if current_value == "Fruit" or current_value == "fruit"
+#     selected_fruits[current_key] = current_value
+#   end
+#   counter += 1
+#  end
+
+#  p selected_fruits
+# end
+
+# select_fruit(produce)
+
