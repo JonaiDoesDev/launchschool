@@ -51,16 +51,41 @@ vehicles = [
 
 #  how_many(vehicles)
 
-def how_many(array)
+# def how_many(array)
+#   occurrences = {}
+
+#   array.uniq.each do |element|
+#     occurrences[element] = array.count(element)
+#   end
+
+#   occurrences.each do |element, count|
+#     puts "#{element} => #{count}"
+#   end
+# end
+
+# how_many(vehicles)
+
+vehicles = [
+  'car', 'car', 'truck', 'car', 'SUV', 'truck',
+  'motorcycle', 'motorcycle', 'car', 'truck'
+]
+
+def count_occurrences(array)
   occurrences = {}
 
   array.uniq.each do |element|
-    occurrences[element] = array.count(element)
+  occurrences[element] = array.count(element)
   end
 
   occurrences.each do |element, count|
     puts "#{element} => #{count}"
   end
+
+  
 end
 
-how_many(vehicles)
+
+
+
+
+count_occurrences(vehicles)
