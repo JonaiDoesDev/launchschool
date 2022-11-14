@@ -272,27 +272,117 @@
 # multiply(my_numbers, 10)
 
 
-question = 'How many times does a particular character appear in this sentence?'
+# question = 'How many times does a particular character appear in this sentence?'
 
-def select_letter(question, letter)
-  selected_letter = ""
+# def select_letter(question, letter)
+#   selected_letter = ""
+#   counter = 0
+
+#   loop do 
+#     break if counter == question.size
+
+#     repeating_letter = question[counter]
+#     selected_letter << repeating_letter if repeating_letter == letter
+#       # selected_letter << repeating_letter
+#     counter += 1
+#   end
+
+#   if selected_letter == ''
+#     print "No repeating letters"
+#   end
+
+
+# p selected_letter if selected_letter != ''
+# end
+
+# p select_letter(question, 'a')
+
+
+
+# def select_vowels(string)
+#   selected_vowels = []
+#   index = 0
+
+#   loop do
+#     break if index == string.size
+#     current_char = string[index]
+#    if 'aeiouAEIOU'.include?(current_char)
+#     selected_vowels << current_char
+#     end
+#   index += 1
+#   # break if index == string.size
+  
+# end
+# selected_vowels
+# end
+
+#  p select_vowels("jonai is the man")
+
+
+
+produce = {
+  'apple' => 'Fruit',
+  'carrot' => 'Vegetable',
+  'pear' => 'Fruit',
+  'broccoli' => 'Vegetable'
+}
+
+def is_fruit(hash)
+  hash_keys = hash.keys
+  fruit_hash = {}
   counter = 0
 
-  loop do 
-    break if counter == question.size
+  
+  loop do
+    break if counter == hash.size
 
-    repeating_letter = question[counter]
-    selected_letter << repeating_letter if repeating_letter == letter
-      # selected_letter << repeating_letter
-    counter += 1
+    current_selection = hash_keys[counter]
+    value = hash[current_selection]
+
+
+    if value == "Fruit"
+    fruit_hash[current_selection] = value
+    end
+
+counter += 1
   end
+p fruit_hash
 
-  if selected_letter == ''
-    print "No repeating letters"
-  end
-
-
-p selected_letter if selected_letter != ''
 end
 
-p select_letter(question, 'a')
+is_fruit(produce)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
