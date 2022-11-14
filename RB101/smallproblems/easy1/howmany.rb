@@ -8,6 +8,16 @@ Write a method that counts the number of occurrences of each element in a given 
 input: an Array
 output: hash counting the number an item in the array happens. ex; "car" => 4, "truck" => 2, etc 
         array element would be a key, the number of times it happens would be the value
+Examples: 
+car => 4
+truck => 3
+SUV => 1
+motorcycle => 2
+
+Algorithm:
+1. loop through the array with the index
+2. save that element in a hash
+
 
 
 =end
@@ -21,22 +31,21 @@ vehicles = [
 
 
 def how_many(array)
-    doubles = {}
+    counted_figures = []
+    counter = 0
 
-    array.uniq.each do |item|
-    doubles[item] = array.count(item)
+    loop do 
+      
+      break if counter == array.size
+
+      current_element = array[counter]
+      counted_figures << current_element
+      counter += 1
+
     end
 
-    doubles.each do |item, count|
-        puts "#{item} => #{count}"
-    end
-    
+    p unique_elements = counted_figures.count
 
 end
 
-
-
-
-
-
-p how_many(vehicles)
+ how_many(vehicles)
