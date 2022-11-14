@@ -30,22 +30,37 @@ vehicles = [
 ]
 
 
-def how_many(array)
-    counted_figures = []
-    counter = 0
+# def how_many(array)
+#     counted_figures = {}
+#     counter = 0
 
-    loop do 
+#     loop do 
       
-      break if counter == array.size
+#       break if counter == array.size
 
-      current_element = array[counter]
-      counted_figures << current_element
-      counter += 1
+#       current_key = array[counter]
+#       current_value = array.count[counter]
+#       counted_figures[current_key] = current_value
+#       counter += 1
 
-    end
+#     end
 
-    p unique_elements = counted_figures.count
+#     p counted_figures
 
+# end
+
+#  how_many(vehicles)
+
+def how_many(array)
+  occurrences = {}
+
+  array.uniq.each do |element|
+    occurrences[element] = array.count(element)
+  end
+
+  occurrences.each do |element, count|
+    puts "#{element} => #{count}"
+  end
 end
 
- how_many(vehicles)
+how_many(vehicles)
