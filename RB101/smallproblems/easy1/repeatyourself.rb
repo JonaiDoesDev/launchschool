@@ -1,8 +1,7 @@
-def mymethod(word, number)
+def repeat(str, number)
     number.times do
-        puts word
+        puts str
     end
 end
 
-
-mymethod('I need to get better', 5)
+repeat("Jonai is cool", 5)
