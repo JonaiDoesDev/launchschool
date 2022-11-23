@@ -320,41 +320,51 @@
 
 
 
-produce = {
-  'apple' => 'Fruit',
-  'carrot' => 'Vegetable',
-  'pear' => 'Fruit',
-  'broccoli' => 'Vegetable'
-}
+# produce = {
+#   'apple' => 'Fruit',
+#   'carrot' => 'Vegetable',
+#   'pear' => 'Fruit',
+#   'broccoli' => 'Vegetable'
+# }
 
-def is_fruit(hash)
-  hash_keys = hash.keys
-  fruit_hash = {}
-  counter = 0
+# def is_fruit(hash)
+#   hash_keys = hash.keys
+#   fruit_hash = {}
+#   counter = 0
 
   
-  loop do
-    break if counter == hash.size
+#   loop do
+#     break if counter == hash.size
 
-    current_selection = hash_keys[counter]
-    value = hash[current_selection]
+#     current_selection = hash_keys[counter]
+#     value = hash[current_selection]
 
 
-    if value == "Fruit"
-    fruit_hash[current_selection] = value
-    end
+#     if value == "Fruit"
+#     fruit_hash[current_selection] = value
+#     end
 
-counter += 1
-  end
-p fruit_hash
+# counter += 1
+#   end
+# p fruit_hash
 
+# end
+
+# is_fruit(produce)
+
+
+
+age = rand(0..100)
+
+if age <= 17
+  puts "Kid"
+elsif age.between?(18, 60)
+  puts "adult"
+else
+  puts "senior"
 end
 
-is_fruit(produce)
-
-
-
-
+puts age
 
 
 
