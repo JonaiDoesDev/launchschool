@@ -356,12 +356,22 @@
 
 age = rand(0..100)
 
-if age <= 17
+# if age <= 17
+#   puts "Kid"
+# elsif age.between?(18, 60)
+#   puts "adult"
+# else
+#   puts "senior"
+# end
+
+
+case age
+when 0..17
   puts "Kid"
-elsif age.between?(18, 60)
-  puts "adult"
-else
-  puts "senior"
+when 18..60
+  puts "Adult"
+when 61..1000
+  puts "Senior"
 end
 
 puts age

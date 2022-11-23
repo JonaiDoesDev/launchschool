@@ -1,13 +1,3 @@
-munsters = {
-  "Herman" => { "age" => 32, "gender" => "male" },
-  "Lily" => { "age" => 30, "gender" => "female" },
-  "Grandpa" => { "age" => 402, "gender" => "male" },
-  "Eddie" => { "age" => 10, "gender" => "male" },
-  "Marilyn" => { "age" => 23, "gender" => "female"}
-}
-
-
-
 =begin
 PEDAC
 
@@ -32,17 +22,64 @@ EXAMPLES/Rules
 - between 18 and 60 == adult
 - 61 and older == senior
 
-each possibly use map!...maybe each, iterate, add "age _group" - KEY
+BONUS "SANDBOX"
+
+age = rand(0..100)
+
+if age <= 17
+  puts "Kid"
+elsif age.between?(18, 60)
+  puts "adult"
+else
+  puts "senior"
+end
 
 
+case age
+when 0..17
+  puts "Kid"
+when 18..60
+  puts "Adult"
+when 61..1000
+  puts "Senior"
+end
+
+puts age
+
+{ "Herman" => { "age" => 32, "gender" => "male"} look through
+Herman for age key and value, if that value is x add age_group => "kid", "adult", or "senior"
 
 
+ALGORITHM (STEPS)
 
-
-
-
-
-
-
-
+- iterate through each hash sub hash to find 'age'
+- compare the value of age against case
+- add a hash item with the output from case
+    
+    
+CODE
 =end
+    
+    munsters = {
+    "Herman" => { "age" => 32, "gender" => "male" },
+      "Lily" => { "age" => 30, "gender" => "female" },
+      "Grandpa" => { "age" => 402, "gender" => "male" },
+      "Eddie" => { "age" => 10, "gender" => "male" },
+      "Marilyn" => { "age" => 23, "gender" => "female"}
+    }
+
+  
+  
+    munsters.each do |key, value|
+        case value["age"]
+        when 0..17
+          value["age_group"] = "Kid"
+        when 18..60
+          value["age_group"] = "Adult"
+        when 61..1000
+          value["age_group"] = "Senior"
+        end
+    end
+    
+    puts munsters
+    
