@@ -1,1 +1,6 @@
-puts "the value of 40 + 2 is " + (40 + 2).to_s
+nothing = [1, 2, 3]
+
+nothing.each_with_object({}) do |value, run|
+ p run[value[0]] = value
+end
+
