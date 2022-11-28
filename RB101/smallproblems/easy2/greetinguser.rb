@@ -1,9 +1,10 @@
 puts "What is your name?"
-users_name = gets.chomp
+ans = gets.chomp
+new_ans = ans.chop
 
-if users_name[-1] == "!"
-  users_name = users_name.chop
-  puts "HELLO #{users_name.upcase} WHY ARE YOU SCREAMING?"
+if ans[-1] == "!"
+  
+  puts "HELLO #{new_ans.upcase}. WHY ARE YOU SCREAMING?"
 else
-puts "Hello #{users_name}"
+  puts "Hello #{new_ans}."
 end
