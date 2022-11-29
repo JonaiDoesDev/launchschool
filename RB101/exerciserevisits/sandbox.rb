@@ -1,6 +1,6 @@
-nothing = [1, 2, 3]
+name = 'Bob'
+save_name = name
+name = 'Alive'
 
-nothing.each_with_object({}) do |value, run|
- p run[value[0]] = value
-end
-
+p name.object_id
+p save_name.object_id
