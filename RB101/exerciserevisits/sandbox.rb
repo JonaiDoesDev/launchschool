@@ -1,8 +1,13 @@
-name = 'Bob'
-save_name = name
-name = 'Alive'
+munsters = {
+  "Herman" => { "age" => 32, "gender" => "male" },
+    "Lily" => { "age" => 30, "gender" => "female" },
+    "Grandpa" => { "age" => 402, "gender" => "male" },
+    "Eddie" => { "age" => 10, "gender" => "male" },
+    "Marilyn" => { "age" => 23, "gender" => "female"}
+  }
 
-p name.object_id
-p save_name.object_id
+  munsters["Jonai"] = {"age" => 33, "gender" => "male"}
 
-doing a test
+  munsters["Jonai"].delete("love")
+
+  p munsters
