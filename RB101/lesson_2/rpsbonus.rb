@@ -1,7 +1,7 @@
 VALID_CHOICES = %w(rock paper scissors lizard spock)
 
 def prompt(message)
-  puts("==> #{message}")
+  puts "==> #{message}"
 end
 
 def win?(first, second)
