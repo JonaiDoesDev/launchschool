@@ -1,3 +1,3 @@
-arr = [4, 3, 7, 9, 10, 23, 2, 3, 4, 1]
+arr = [['a', ['b']], { b: 'bear', c: 'cat' }, 'cab']
 
-p arr.sort {|a, b| b <=> a}
+p arr[1][:c][2]
