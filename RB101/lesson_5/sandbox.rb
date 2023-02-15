@@ -6,3 +6,4 @@ arr = [a, b]
 p arr[0][1].object_id
 p a[1].object_id
 
+need to get back into it
