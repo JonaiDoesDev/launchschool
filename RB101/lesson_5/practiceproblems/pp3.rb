@@ -4,6 +4,8 @@ puts arr1[2][1][3]
 
 arr2 = [{first: ['a', 'b', 'c'], second: ['d', 'e', 'f']}, {third: ['g', 'h', 'i']}]
 
+puts arr2[1][:third][0]
+
 arr3 = [['abc'], ['def'], {third: ['ghi']}]
 
 hsh1 = {'a' => ['d', 'e'], 'b' => ['f', 'g'], 'c' => ['h', 'i']}
