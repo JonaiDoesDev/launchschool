@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 randoms = ('a'..'z').to_a + ('0'..'9').to_a
 key1 = 1
 key2 = 2
@@ -7,9 +7,6 @@ key4 = 4
 key5 = 5
 
 puts master_key = "#{key1}" + "#{key2}" + "#{key3}" + "#{key4}" + "#{key5}"
-
-
-=======
 
 
 def uuid_code()
@@ -24,6 +21,3 @@ string4 = rand(36**string_length2).to_s(36)
 string5 = rand(36**string_length3).to_s(36)
   puts "#{string1}-" + "#{string2}-" + "#{string3}-" + "#{string4}-" + "#{string5}"
 end
-
-puts uuid_code()
->>>>>>> 5fc1997cec22609ea8df18d0094c721e52d8270e
