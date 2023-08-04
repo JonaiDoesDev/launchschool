@@ -1,18 +1,6 @@
-# # [[1, 2], [3, 4]].each do |arr|
-# #   p arr.first
-# # end
-
-
-# [[1, 2], [3, 4]].map do |arr|
-#   puts arr.first
-# end
- 
-
-my_arr = [[18, 7], [3, 12]].each do |arr|
-  arr.each do |num|
-    if num > 5
-      puts num
-    end
+[[[1], [2], [3], [4]], [['a'], ['b'], ['c']]].map do |element1|
+  element1.each do |element2|
+    p element1
   end
 end
-
+# => [[[1], [2], [3], [4]], [["a"], ["b"], ["c"]]]
