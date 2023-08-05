@@ -10,7 +10,9 @@ hsh2 = {first: {'d' => 3}, second: {'e' => 2, 'f' => 1}, third: {'g' => 0}}
 
 
 
+
 puts arr1[2][1][3]
-arr2.map do |key, value|
-  puts arr2[key]
-end
+
+puts arr2[1][:third][0]
+
+puts arr3[2][:third][0][0]
