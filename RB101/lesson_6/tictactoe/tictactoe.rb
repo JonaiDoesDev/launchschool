@@ -48,9 +48,13 @@ def player_places_piece!(brd)
   brd[square] = PLAYER_MARKER
 end
 
-
+def computer_places_piece!(brd)
+  square = empty_squares(brd).sample
+  brd[square] = COMPUTER_MARKER
+end
 
 
 player_places_piece!(board)
+computer_places_piece!(brd)
 puts board.inspect
 display_board(board)
