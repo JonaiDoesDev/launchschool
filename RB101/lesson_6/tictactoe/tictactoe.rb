@@ -39,10 +39,21 @@ end
 board = initialize_board
 display_board(board)
 
+def joinor(arr, delimiter=', ', word='or')
+  case arr.size
+  when 0 then ''
+  when 1 then arr.first.to_s
+  when 2 then arr.join(" #{word} ")
+  else
+    arr[-1] = "#{word} #{arr.last}"
+    arr.join(delimiter)
+  end
+ end
+
 def player_places_piece!(brd)
   square = ''
   loop do
-  prompt "Choose a square (#{empty_squares(brd).join(', ')})"
+  prompt "Choose a square: #{joinor(empty_squares(brd))}"
   square = gets.chomp.to_i
   break if empty_squares(brd).include?(square)
   prompt "Sorry, that's not a valid choice."
@@ -82,11 +93,37 @@ def detect_winner(brd)
   nil
 end
 
+# def scoreboard
+#     scoreboard = {"Player" => 0, "Computer" => 0}
+#     puts "SCOREBOARD: PLAYER: #{scoreboard["Player"]} | COMPUTER: #{scoreboard["Computer"]}"
+#     loop do
+#       scoreboard["Player"] += 1
+#       break if scoreboard["Player"] == 5
+#     end
+# end
+
+
+def scoreboard(board)
+  scoreboard = {"Player" => 0, "Computer" => 0}
+  puts "SCOREBOARD: PLAYER: #{scoreboard["Player"]} | COMPUTER: #{scoreboard["Computer"]}"
+  loop do
+ if detect_winner(board) == "Player"
+    scoreboard["Player"] += 1
+elsif detect_winner(board) == "Computer"
+    scoreboard["Computer"] += 1
+break if scoreboard["Computer" == 5] || scoreboard["Player"] == 5
+    end
+  end 
+end
+
+
+
 loop do
   board = initialize_board
 
   loop do
     display_board(board)
+    scoreboard(board)
 
     player_places_piece!(board)
     break if someone_won?(board) || board_full?(board)
