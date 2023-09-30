@@ -1,6 +1,10 @@
+require 'pry-byebug'
+
 INITIAL_MARKER = ' '
 PLAYER_MARKER = 'X'
 COMPUTER_MARKER = 'O'
+
+scores = {"Player" => 0, "Computer" => 0}
 
 def prompt(msg)
   puts "=> #{msg}"
@@ -24,7 +28,6 @@ def display_board(brd)
   puts "     |     |"
 end
 # rubocop:enable Metrics/MethodLength, Metrics/AbcSize
-
 
 def initialize_board
   new_board = {}
@@ -93,37 +96,27 @@ def detect_winner(brd)
   nil
 end
 
-# def scoreboard
-#     scoreboard = {"Player" => 0, "Computer" => 0}
-#     puts "SCOREBOARD: PLAYER: #{scoreboard["Player"]} | COMPUTER: #{scoreboard["Computer"]}"
-#     loop do
-#       scoreboard["Player"] += 1
-#       break if scoreboard["Player"] == 5
-#     end
-# end
-
-
-def scoreboard(board)
-  scoreboard = {"Player" => 0, "Computer" => 0}
-  puts "SCOREBOARD: PLAYER: #{scoreboard["Player"]} | COMPUTER: #{scoreboard["Computer"]}"
-  loop do
- if detect_winner(board) == "Player"
-    scoreboard["Player"] += 1
-elsif detect_winner(board) == "Computer"
-    scoreboard["Computer"] += 1
-break if scoreboard["Computer" == 5] || scoreboard["Player"] == 5
-    end
-  end 
+def display_scoreboard(scores)
+  puts "Score: Player: #{scores["Player"]} | Computer: #{scores["Computer"]}"
 end
 
-
+def increase_score(score)
+  if detect_winner(brd) == "Player"
+    score["Player"] += 1
+  elsif detect_winner(brd) == "Computer"
+    score["Computer"] += 1
+  else
+    display_scoreboard(score)
+  end
+end
 
 loop do
   board = initialize_board
 
   loop do
     display_board(board)
-    scoreboard(board)
+    display_scoreboard(scores)
+    increase_score(scores)
 
     player_places_piece!(board)
     break if someone_won?(board) || board_full?(board)
