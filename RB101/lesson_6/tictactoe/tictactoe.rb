@@ -100,15 +100,9 @@ def display_scoreboard(scores)
   puts "Score: Player: #{scores["Player"]} | Computer: #{scores["Computer"]}"
 end
 
-def increase_score(score)
-  if detect_winner(brd) == "Player"
-    score["Player"] += 1
-  elsif detect_winner(brd) == "Computer"
-    score["Computer"] += 1
-  else
-    display_scoreboard(score)
-  end
-end
+#START OF PROGRAM LOGIC
+
+puts "First to 5 wins!"
 
 loop do
   board = initialize_board
@@ -116,7 +110,6 @@ loop do
   loop do
     display_board(board)
     display_scoreboard(scores)
-    increase_score(scores)
 
     player_places_piece!(board)
     break if someone_won?(board) || board_full?(board)
@@ -129,12 +122,16 @@ loop do
 
   if someone_won?(board)
     prompt "#{detect_winner(board)} won!"
+    scores[detect_winner(board)] += 1
+    break if scores[detect_winner(board)] == 5
   else
     prompt "It's a tie!"
   end
 
-  prompt "Play again? (y or n)"
+  prompt "Play again? (Y or N)"
   answer = gets.chomp
   break unless answer.downcase.start_with?('y')
 end
+
+puts "#{detect_winner(board)} has reached 5 wins. They have won the match!"
 prompt "Thanks for playing Tic Tac Toe! Goodbye!"
