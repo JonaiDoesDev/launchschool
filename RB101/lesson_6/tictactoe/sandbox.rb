@@ -17,7 +17,6 @@ board = example
 display_board(board)
 
 def player_turn(brd)
-  # display_board(board)
   puts "choose a number now!"
   player = gets.chomp
   brd[player] = "I did it."
