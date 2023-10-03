@@ -69,16 +69,31 @@ end
 
 def computer_places_piece!(brd)
   square = nil
-  WINNING_LINES.each do |line|
-    square = find_at_risk_square(line, brd)
+
+   #offense
+   if !square
+    WINNING_LINES.each do |line|
+    square = find_at_risk_square(line, brd, COMPUTER_MARKER)
     break if square
+    end
   end
 
+  #defence
+  WINNING_LINES.each do |line|
+    square = find_at_risk_square(line, brd, PLAYER_MARKER)
+    break if square
+  end
+  
+  if !square && empty_squares(brd).include?(5)
+    square = 5
+  end
+
+  #just pick a square
   if !square
     square = empty_squares(brd).sample
   end
 
-  brd[square] = COMPUTER_MARKER
+brd[square] = COMPUTER_MARKER
 end
 
 def board_full?(brd)
@@ -109,8 +124,8 @@ def display_scoreboard(scores)
   puts "Score: Player: #{scores["Player"]} | Computer: #{scores["Computer"]}"
 end
 
-def find_at_risk_square(line, board)
-  if board.values_at(*line).count(PLAYER_MARKER) == 2
+def find_at_risk_square(line, board, marker)
+  if board.values_at(*line).count(marker) == 2
     board.select{|k,v| line.include?(k) && v == INITIAL_MARKER}.keys.first
   else
     nil
@@ -124,17 +139,31 @@ puts "First to 5 wins!"
 
 loop do
   board = initialize_board
+  first_turn = nil
 
   loop do
-    display_board(board)
-    display_scoreboard(scores)
+    puts "Do you want to play first (1) or second (2)"
+    first_turn = gets.chomp.to_i
+    break if [1, 2].include?(first_turn)
+      puts "Invalid choice. Please enter 1 for first or 2 for second."
+    end
 
-    player_places_piece!(board)
-    break if someone_won?(board) || board_full?(board)
+    if first_turn == 2
+      computer_places_piece!(board)
+      display_board(board)
+    end
 
-    computer_places_piece!(board)
-    break if someone_won?(board) || board_full?(board)
-  end
+    loop do
+      display_board(board)
+      display_scoreboard(scores)
+
+      
+      player_places_piece!(board)
+      break if someone_won?(board) || board_full?(board)
+  
+      computer_places_piece!(board)
+      break if someone_won?(board) || board_full?(board)
+      end
 
   display_board(board)
 
