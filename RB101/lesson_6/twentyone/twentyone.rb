@@ -21,28 +21,40 @@ def display_hands(player, dealer)
   puts "The dealer's hand: #{dealer}"
 end
 
-def card_value_conversions(player, dealer)
-  new_player_deck = player.map do |card|
-      if card == "Jack"
-        "10".to_i
-      elsif card == "Queen"
-        "10".to_i
-      elsif card == "King"
-        "10".to_i
-      end
-    end
-  player << new_player_deck
+player_score = 0
+dealer_score = 0
 
-  new_dealer_deck = dealer.map do |card|
+
+def card_value_conversions(player)
+  score = 0
+    player.each do |card|
       if card == "Jack"
-        "10".to_i
+         score + "10".to_i
       elsif card == "Queen"
-        "10".to_i
+        score + "10".to_i
       elsif card == "King"
-        "10".to_i
+        score + "10".to_i
+      elsif card == "Ace"
+        score + "10".to_i       
+      else
+        score
       end
-  end
-  dealer << new_dealer_deck
+      
+    end
+
+  # new_dealer_deck = dealer.map do |card|
+  #     if card == "Jack"
+  #        dealerscore + "10".to_i 
+  #     elsif card == "Queen"
+  #        dealerscore + "10".to_i
+  #     elsif card == "King"
+  #        dealerscore + "10".to_i
+  #     elsif card == "Ace"
+  #        playerscore + "10".to_i 
+  #     else
+  #        dealerscore + card
+  #     end 
+  # end
 end
 
 
@@ -67,8 +79,11 @@ loop do
   break if dealer_deck.size == 2
 end
 
-card_value_conversions(player_deck, dealer_deck)
-display_hands(player_deck, dealer_deck)
+card_value_conversions(player_deck)
+
+p player_deck
+p player_score
+# display_hands(player_deck, dealer_deck)
 
 # display_hands(player_deck, dealer_deck)
 # winning_hand(player_deck, dealer_deck)
