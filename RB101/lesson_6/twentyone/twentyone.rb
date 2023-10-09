@@ -24,38 +24,23 @@ end
 player_score = 0
 dealer_score = 0
 
-def card_value_conversions(player)
+def find_score(hand)
 score = 0
-    player.each do |card|
+    hand.each do |card|
       if card == "Jack"
-          score = score + "10".to_i
+          score += "10".to_i
       elsif card == "Queen"
-          score += score + "10".to_i
+          score += "10".to_i
       elsif card == "King"
-          score += score + "10".to_i
+          score += "10".to_i
       elsif card == "Ace"
-          score += score + "11".to_i       
+          score += "11".to_i       
       else
-        score += score + card
+        score += card
       end
-      score
     end
-
-  # new_dealer_deck = dealer.map do |card|
-  #     if card == "Jack"
-  #        dealerscore + "10".to_i 
-  #     elsif card == "Queen"
-  #        dealerscore + "10".to_i
-  #     elsif card == "King"
-  #        dealerscore + "10".to_i
-  #     elsif card == "Ace"
-  #        playerscore + "10".to_i 
-  #     else
-  #        dealerscore + card
-  #     end 
-  # end
+    score
 end
-
 
 # def winning_hand(player, dealer)
 #   usuable_card_values_player = card_value_conversions(player)
@@ -78,11 +63,12 @@ loop do
   break if dealer_deck.size == 2
 end
 
-card_value_conversions(player_deck)
+player_score = find_score(player_deck)
+dealer_score = find_score(dealer_deck)
 
 p player_deck
-p score
-# display_hands(player_deck, dealer_deck)
+p player_score
 
-# display_hands(player_deck, dealer_deck)
-# winning_hand(player_deck, dealer_deck)
+p dealer_deck
+p dealer_score
+
