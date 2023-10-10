@@ -17,9 +17,26 @@ def random_draw(deck)
 end
 
 def display_hands(player, dealer)
-  puts "The Player's hand: #{player}"
-  puts "The dealer's hand: #{dealer}"
+  puts "The Player's hand: #{player.join(", ")}"
+  puts "The dealer's hand: #{dealer.join(", ")}"
 end
+
+def hit_or_stay()
+  puts 'Would you like to "Hit" or "Stay"?'
+  answer = gets.chomp.downcase
+  loop do
+  if answer == "hit" || "h"
+  random_draw(deck_of_cards)
+  elsif answer == "stay" || "s"
+  random_draw(deck_of_cards)
+  else
+    puts "You need to choose either to hit or stay."
+  end
+
+  end
+end
+
+
 
 player_score = 0
 dealer_score = 0
@@ -42,11 +59,6 @@ score = 0
     score
 end
 
-# def winning_hand(player, dealer)
-#   usuable_card_values_player = card_value_conversions(player)
-#   usuable_card_values_player.sum
-# end
-
 
 # if ace is drawn choose between 1 or 11 to be the value of ace
 # depending on if the total value of the cards respective deck will put it over 21
@@ -66,9 +78,7 @@ end
 player_score = find_score(player_deck)
 dealer_score = find_score(dealer_deck)
 
-p player_deck
-p player_score
-
-p dealer_deck
-p dealer_score
-
+display_hands(player_deck, dealer_deck)
+hit_or_stay()
+# display_score(player_score)
+# display_score(dealer_score)
