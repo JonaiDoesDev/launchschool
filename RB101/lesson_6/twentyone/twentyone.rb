@@ -18,25 +18,30 @@ end
 
 def display_hands(player, dealer)
   puts "The Player's hand: #{player.join(", ")}"
-  puts "The dealer's hand: #{dealer.join(", ")}"
+  if dealer.size == 2
+    puts "The Dealer's hand: #{dealer[0]}"
+  else
+    puts "The dealer's hand: #{dealer.join(", ")}"
+  end
 end
 
-def hit_or_stay()
+def hit_or_stay(deck, player, dealer, playerscore, dealerscore)
+ loop do
   puts 'Would you like to "Hit" or "Stay"?'
   answer = gets.chomp.downcase
-  loop do
-  if answer == "hit" || "h"
-  random_draw(deck_of_cards)
-  elsif answer == "stay" || "s"
-  random_draw(deck_of_cards)
-  else
+  if answer == "hit" || answer == "h"
+  player << random_draw(deck)
+  break if win_or_lose(playerscore, dealerscore)
+  elsif answer == "stay" || answer == "s"
+  dealer << random_draw(deck)
+  display_hands(player, dealer)
+  break if find_score(dealer) >= 17
+  else 
     puts "You need to choose either to hit or stay."
   end
-
   end
+  display_hands(player, dealer)
 end
-
-
 
 player_score = 0
 dealer_score = 0
@@ -59,6 +64,14 @@ score = 0
     score
 end
 
+def win_or_lose(player, dealer)
+  if player == 21 && dealer > 21
+    puts "Player has won the game."
+  else dealer == 21 && player < 21
+    puts "Dealer has won the game."
+  end
+end
+
 
 # if ace is drawn choose between 1 or 11 to be the value of ace
 # depending on if the total value of the cards respective deck will put it over 21
@@ -79,6 +92,4 @@ player_score = find_score(player_deck)
 dealer_score = find_score(dealer_deck)
 
 display_hands(player_deck, dealer_deck)
-hit_or_stay()
-# display_score(player_score)
-# display_score(dealer_score)
+hit_or_stay(deck_of_cards, player_deck, dealer_deck, player_score,dealer_score)
