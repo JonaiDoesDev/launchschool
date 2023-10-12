@@ -1,4 +1,4 @@
-require 'pry-byebug'
+
 
 deck_of_cards = {
   :Hearts => [2, 3, 4, 5, 6, 7, 8, 9, 10, "Ace", "Jack", "Queen", "King"],
@@ -25,22 +25,8 @@ def display_hands(player, dealer)
   end
 end
 
-def hit_or_stay(deck, player, dealer, playerscore, dealerscore)
- loop do
-  puts 'Would you like to "Hit" or "Stay"?'
-  answer = gets.chomp.downcase
-  if answer == "hit" || answer == "h"
-  player << random_draw(deck)
-  break if win_or_lose(playerscore, dealerscore)
-  elsif answer == "stay" || answer == "s"
-  dealer << random_draw(deck)
-  display_hands(player, dealer)
-  break if find_score(dealer) >= 17
-  else 
-    puts "You need to choose either to hit or stay."
-  end
-  end
-  display_hands(player, dealer)
+def deal(deck, hand)
+      hand << random_draw(deck)
 end
 
 player_score = 0
@@ -64,32 +50,44 @@ score = 0
     score
 end
 
-def win_or_lose(player, dealer)
-  if player == 21 && dealer > 21
+def win_or_lose(playerscore, dealerscore)
+  if playerscore == 21
     puts "Player has won the game."
-  else dealer == 21 && player < 21
+  elsif playerscore > 21
+    puts "Player has lost the game."
+  elsif dealerscore == 21
     puts "Dealer has won the game."
+  elsif dealerscore > 21
+    puts "Dealer has lost the game."
   end
 end
 
-
-# if ace is drawn choose between 1 or 11 to be the value of ace
-# depending on if the total value of the cards respective deck will put it over 21
-#if not, choose 11, if yes, choose 1
-
-# def ace_value(player)
-#   if player.include?("Ace") && game is < 21 
-#   end
-# end
-
+#Game Logic
 loop do
   player_deck << random_draw(deck_of_cards)
   dealer_deck << random_draw(deck_of_cards)
   break if dealer_deck.size == 2
 end
 
+display_hands(player_deck, dealer_deck)
+
 player_score = find_score(player_deck)
 dealer_score = find_score(dealer_deck)
 
+loop do
+  puts "Would you like to 'Hit' or 'Stay'?"
+  answer = gets.chomp.downcase
+  if answer == 'hit' || answer == 'h'
+      deal(deck_of_cards, player_deck)
+      break
+  elsif answer == 'stay' || answer == 's'
+      deal(deck_of_cards, dealer_deck)
+      break
+  else
+      puts "You need to hit or stay"
+  end
+  player_score
+  dealer_score
+end
+
 display_hands(player_deck, dealer_deck)
-hit_or_stay(deck_of_cards, player_deck, dealer_deck, player_score,dealer_score)
