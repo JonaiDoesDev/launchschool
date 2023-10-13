@@ -1,4 +1,4 @@
-
+require 'pry-byebug'
 
 deck_of_cards = {
   :Hearts => [2, 3, 4, 5, 6, 7, 8, 9, 10, "Ace", "Jack", "Queen", "King"],
@@ -14,6 +14,7 @@ def random_draw(deck)
   suit = deck.keys.sample
   cards = deck[suit]
   chosen_card = cards.sample
+  chosen_card
 end
 
 def display_hands(player, dealer)
@@ -27,6 +28,11 @@ end
 
 def deal(deck, hand)
       hand << random_draw(deck)
+end
+
+def stay(deck, dealer, dealerscore)
+  dealer << random_draw(deck)
+
 end
 
 player_score = 0
@@ -77,17 +83,55 @@ dealer_score = find_score(dealer_deck)
 loop do
   puts "Would you like to 'Hit' or 'Stay'?"
   answer = gets.chomp.downcase
-  if answer == 'hit' || answer == 'h'
+   if answer == 'hit' || answer == 'h'
       deal(deck_of_cards, player_deck)
-      break
-  elsif answer == 'stay' || answer == 's'
-      deal(deck_of_cards, dealer_deck)
-      break
-  else
-      puts "You need to hit or stay"
+      display_hands(player_deck, dealer_deck)
+      player_score = find_score(player_deck)
+      if player_score > 21
+        puts "Player Lost!"
+        break
+      end
+    else
+        break
+    end
   end
-  player_score
-  dealer_score
-end
 
-display_hands(player_deck, dealer_deck)
+  loop do
+      deal(deck_of_cards, dealer_deck)
+      display_hands(player_deck, dealer_deck)
+      dealer_score = find_score(dealer_deck)
+      if dealer_score <= 17
+        break
+      elsif
+        dealer_score.between?(17, 21)
+        break
+    else
+      puts "Dealer has lost"
+      break
+      end
+    end
+
+
+  
+
+    #    if player_score > 21
+    #     puts "Player Lost!"
+    #     break
+    #    end
+
+    # else
+    #   break
+    #  end
+    # end
+
+
+#   elsif answer == 'stay' || answer == 's'
+#       deal(deck_of_cards, dealer_deck)
+#      break if dealer_score > 21
+#       puts "Player has won!"
+#   else
+#       puts "You need to hit or stay"
+#   end
+# end
+
+# display_hands(player_deck, dealer_deck)
