@@ -59,12 +59,14 @@ end
 def win_or_lose(playerscore, dealerscore)
   if playerscore == 21
     puts "Player has won the game."
-  elsif playerscore > 21
-    puts "Player has lost the game."
   elsif dealerscore == 21
-    puts "Dealer has won the game."
-  elsif dealerscore > 21
-    puts "Dealer has lost the game."
+    puts "Dealer has won the game"
+  elsif playerscore > dealerscore && playerscore < 22
+    puts "Player has won the game"
+  elsif dealerscore > playerscore && dealerscore < 22
+    puts "Dealer has won the game"
+  elsif playerscore == dealerscore
+    puts "Its a tie!"
   end
 end
 
@@ -80,6 +82,10 @@ display_hands(player_deck, dealer_deck)
 player_score = find_score(player_deck)
 dealer_score = find_score(dealer_deck)
 
+if player_score == 21
+  puts "Player has won the game!"
+end
+
 loop do
   puts "Would you like to 'Hit' or 'Stay'?"
   answer = gets.chomp.downcase
@@ -88,8 +94,10 @@ loop do
       display_hands(player_deck, dealer_deck)
       player_score = find_score(player_deck)
       if player_score > 21
-        puts "Player Lost!"
+        puts "Dealer won!"
         break
+      elsif player_score == 21
+        puts "Player won!"
       end
     else
         break
@@ -100,38 +108,20 @@ loop do
       deal(deck_of_cards, dealer_deck)
       display_hands(player_deck, dealer_deck)
       dealer_score = find_score(dealer_deck)
-      if dealer_score <= 17
+      if dealer_score.between?(17, 20)
         break
       elsif
-        dealer_score.between?(17, 21)
+        dealer_score == 21
+        puts "Dealer won!"
         break
-    else
-      puts "Dealer has lost"
+      elsif
+        dealer_score > 21
+      puts "Player won!"
       break
       end
     end
 
+    player_score = find_score(player_deck)
+    dealer_score = find_score(dealer_deck)
 
-  
-
-    #    if player_score > 21
-    #     puts "Player Lost!"
-    #     break
-    #    end
-
-    # else
-    #   break
-    #  end
-    # end
-
-
-#   elsif answer == 'stay' || answer == 's'
-#       deal(deck_of_cards, dealer_deck)
-#      break if dealer_score > 21
-#       puts "Player has won!"
-#   else
-#       puts "You need to hit or stay"
-#   end
-# end
-
-# display_hands(player_deck, dealer_deck)
+    win_or_lose(player_score, dealer_score)
