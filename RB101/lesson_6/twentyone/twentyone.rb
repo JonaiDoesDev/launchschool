@@ -87,14 +87,14 @@ if player_score == 21
 end
 
 if player_score != 21
-   loop do
-  puts "Would you like to 'Hit' or 'Stay'?"
-  answer = gets.chomp.downcase
-   if answer == 'hit' || answer == 'h'
-      deal(deck_of_cards, player_deck)
-      display_hands(player_deck, dealer_deck)
-      player_score = find_score(player_deck)
-      if player_score > 21
+  loop do
+    puts "Would you like to 'Hit' or 'Stay'?"
+    answer = gets.chomp.downcase
+  if answer == 'hit' || answer == 'h'
+    deal(deck_of_cards, player_deck)
+    display_hands(player_deck, dealer_deck)
+    player_score = find_score(player_deck)
+    if player_score > 21
         puts "Dealer won!"
         break
       elsif player_score == 21
@@ -110,21 +110,21 @@ if player_score != 21
       deal(deck_of_cards, dealer_deck)
       display_hands(player_deck, dealer_deck)
       dealer_score = find_score(dealer_deck)
-      if dealer_score.between?(17, 20)
-        break
-      elsif
-        dealer_score == 21
-        puts "Dealer won!"
-        break
-      elsif
-        dealer_score > 21
+    if dealer_score.between?(17, 20)
+      break
+    elsif
+      dealer_score == 21
+      puts "Dealer won!"
+      break
+    elsif
+      dealer_score > 21
       puts "Player won!"
       break
       end
     end
   end
 
-    player_score = find_score(player_deck)
-    dealer_score = find_score(dealer_deck)
+  player_score = find_score(player_deck)
+  dealer_score = find_score(dealer_deck)
 
-    win_or_lose(player_score, dealer_score)
+  win_or_lose(player_score, dealer_score)
