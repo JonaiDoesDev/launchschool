@@ -83,10 +83,11 @@ player_score = find_score(player_deck)
 dealer_score = find_score(dealer_deck)
 
 if player_score == 21
-  puts "Player has won the game!"
+  puts "Player has won the game!!!!!!"
 end
 
-loop do
+if player_score != 21
+   loop do
   puts "Would you like to 'Hit' or 'Stay'?"
   answer = gets.chomp.downcase
    if answer == 'hit' || answer == 'h'
@@ -98,6 +99,7 @@ loop do
         break
       elsif player_score == 21
         puts "Player won!"
+        break
       end
     else
         break
@@ -120,6 +122,7 @@ loop do
       break
       end
     end
+  end
 
     player_score = find_score(player_deck)
     dealer_score = find_score(dealer_deck)
