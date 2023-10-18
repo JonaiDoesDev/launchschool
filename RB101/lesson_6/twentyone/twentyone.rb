@@ -106,7 +106,8 @@ if player_score != 21
     end
   end
 
-  loop do
+  unless player_score >= 21 
+    loop do
       deal(deck_of_cards, dealer_deck)
       display_hands(player_deck, dealer_deck)
       dealer_score = find_score(dealer_deck)
@@ -123,6 +124,7 @@ if player_score != 21
       end
     end
   end
+end
 
   player_score = find_score(player_deck)
   dealer_score = find_score(dealer_deck)
