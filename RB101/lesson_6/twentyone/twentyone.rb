@@ -48,11 +48,19 @@ score = 0
       elsif card == "King"
           score += "10".to_i
       elsif card == "Ace"
-          score += "11".to_i       
+          if score + 11 <= 21 
+            score += "11".to_i
+          else
+            score += "1".to_i
+          end
       else
         score += card
       end
     end
+    if hand.size >= 2
+      puts "score: #{score}"
+    end
+
     score
 end
 
@@ -82,9 +90,10 @@ display_hands(player_deck, dealer_deck)
 player_score = find_score(player_deck)
 dealer_score = find_score(dealer_deck)
 
-if player_score == 21
-  puts "Player has won the game!!!!!!"
-end
+
+# if player_score == 21
+#   puts "Player has won the game!!!!!!"
+# end
 
 if player_score != 21
   loop do
