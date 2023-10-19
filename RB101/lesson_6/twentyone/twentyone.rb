@@ -57,11 +57,18 @@ score = 0
         score += card
       end
     end
-    if hand.size >= 2
-      puts "score: #{score}"
-    end
-
     score
+end
+
+def scoreboard(player, dealer, deck)
+  find_score(deck)
+  puts "Player Score: #{player}"
+if deck.size == 2
+    puts "Dealer Score: #{dealer - deck[1].to_i}"
+else
+    puts "Dealer Score: #{dealer}"
+  end
+  
 end
 
 def win_or_lose(playerscore, dealerscore)
@@ -79,48 +86,54 @@ def win_or_lose(playerscore, dealerscore)
 end
 
 #Game Logic
+
 loop do
   player_deck << random_draw(deck_of_cards)
   dealer_deck << random_draw(deck_of_cards)
   break if dealer_deck.size == 2
 end
 
-display_hands(player_deck, dealer_deck)
-
 player_score = find_score(player_deck)
 dealer_score = find_score(dealer_deck)
 
-
-# if player_score == 21
-#   puts "Player has won the game!!!!!!"
-# end
+display_hands(player_deck, dealer_deck)
+scoreboard(player_score, dealer_score, dealer_deck)
 
 if player_score != 21
   loop do
     puts "Would you like to 'Hit' or 'Stay'?"
     answer = gets.chomp.downcase
-  if answer == 'hit' || answer == 'h'
+  if answer == 'stay' || answer == 's'
+    break
+  end
+
+  if answer == 'hit' || answer == 'h' 
     deal(deck_of_cards, player_deck)
     display_hands(player_deck, dealer_deck)
     player_score = find_score(player_deck)
+    scoreboard(player_score, dealer_score, dealer_deck)
+    end
+    
     if player_score > 21
         puts "Dealer won!"
         break
       elsif player_score == 21
         puts "Player won!"
         break
-      end
-    else
-        break
+  else
+    puts "You must hit or stay"
     end
   end
 
-  unless player_score >= 21 
+
+  unless player_score >= 21
+
     loop do
+      break if dealer_score == 21
       deal(deck_of_cards, dealer_deck)
       display_hands(player_deck, dealer_deck)
       dealer_score = find_score(dealer_deck)
-    if dealer_score.between?(17, 20)
+    if dealer_score.between?(17, 21)
       break
     elsif
       dealer_score == 21
@@ -137,5 +150,8 @@ end
 
   player_score = find_score(player_deck)
   dealer_score = find_score(dealer_deck)
+  unless player_score == 21 
+    scoreboard(player_score, dealer_score, dealer_deck)
+  end
 
   win_or_lose(player_score, dealer_score)
