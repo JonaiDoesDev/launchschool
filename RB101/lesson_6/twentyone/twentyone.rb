@@ -58,7 +58,7 @@ score = 0
   end
 
   def scoreboard(player, dealer, deck)
-      find_score(deck)
+      score = find_score(deck)
       puts "Player Score: #{player}"
     if deck.size == 2 && deck[0] == 'King' || deck[0] == 'Queen' || deck[0] == 'Jack'
       puts "Dealer Score: 10"
@@ -66,9 +66,10 @@ score = 0
       puts "Dealer Score: 11"
     elsif deck.size == 2
       puts "Dealer Score: #{deck[0]}"
-    end
+    else
     if deck.size > 2
-      puts "Dealer Score: #{dealer}"
+      puts "Dealer Score: #{score}"
+      end
     end
   end
 
