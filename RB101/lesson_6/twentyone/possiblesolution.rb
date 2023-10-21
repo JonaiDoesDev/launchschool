@@ -85,7 +85,7 @@ loop do
   deck = initialize_deck
   player_cards = []
   dealer_cards = []
-
+  
   # initial deal
   2.times do
     player_cards << deck.pop
