@@ -299,6 +299,9 @@ Layout/EmptyLineAfterGuardClause:
   Description: 'Requires empty line after guard clause'
   Enabled: false
 
+Layout/EndOfLine:
+  Enabled: False
+
 Style/FloatDivision:
   Description: 'Checks for division with integers coerced to floats.'
   Enabled: false
