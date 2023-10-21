@@ -53,7 +53,7 @@ def find_score(hand)
     score
 end
 
-def scoreboard(player, _dealerscore, deck)
+def scoreboard(player, deck)
   score = find_score(deck)
   puts "Player Score: #{player}"
   if deck.size == 2 && deck[0] == 'King' || deck[0] == 'Queen' || deck[0] == 'Jack'
@@ -80,7 +80,7 @@ def win_or_lose(playerscore, dealerscore, deck)
     puts "Its a tie!"
   end
   unless playerscore == 21
-    scoreboard(playerscore, dealerscore, deck)
+    scoreboard(playerscore, deck)
   end
 end
 
@@ -96,7 +96,7 @@ player_score = find_score(player_deck)
 dealer_score = find_score(dealer_deck)
 
 display_hands(player_deck, dealer_deck)
-scoreboard(player_score, dealer_score, dealer_deck)
+scoreboard(player_score, dealer_deck)
 
 if player_score != 21
   loop do
@@ -111,7 +111,7 @@ if answer == 'hit' || answer == 'h'
   display_hands(player_deck, dealer_deck)
   player_score = find_score(player_deck)
   dealer_score = find_score(dealer_deck)
-  scoreboard(player_score, dealer_score, dealer_deck)
+  scoreboard(player_score, dealer_deck)
 else
   puts "You must hit or stay"
 end
@@ -128,7 +128,7 @@ end
 unless player_score >= 21 || dealer_score == 21
   loop do
     display_hands(player_deck, dealer_deck)
-    scoreboard(player_score, dealer_score, dealer_deck)
+    scoreboard(player_score, dealer_deck)
     player_score = find_score(player_deck)
     dealer_score = find_score(dealer_deck)
   if dealer_score == 21
