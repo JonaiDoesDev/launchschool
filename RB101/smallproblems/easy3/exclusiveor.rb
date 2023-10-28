@@ -1,0 +1,3 @@
+def xor(object)
+  
+end
