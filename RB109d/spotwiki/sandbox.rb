@@ -1,9 +1,15 @@
-a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-
-
-a.each do |number|
-  evaluated = number + 1
+def greetings(str)
+  puts str.object_id
+  str = "another string"
+  puts str
+  puts "Goodbye"
 end
 
-puts evaluated
+word = "Hello"
 
+greetings(word)
+
+puts word.object_id
+puts str # will not output as it is not defined, will throw and eror
+
+# Outputs 'Goodbye'
