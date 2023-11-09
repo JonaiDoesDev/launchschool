@@ -1,9 +1,6 @@
 def uppercase?(string)
-  if string == string.upcase
-    true
-  else
-    false
+  string == string.upcase
 end
-end
+
 
 uppercase?("jonai")
