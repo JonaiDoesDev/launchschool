@@ -1,7 +1,9 @@
-a = 'Bob'
-
-5.times do |x|
-  puts a = 'Bill'
+def letter_count(str)
+  charac = str.chars
+  charac.each do |letter|
+  letter.to_s
+  end
 end
 
-p a
+
+puts letter_count("jonai")
