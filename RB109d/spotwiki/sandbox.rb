@@ -1,9 +1,13 @@
-def letter_count(str)
-  charac = str.chars
-  charac.each do |letter|
-  letter.to_s
-  end
+a = 4
+
+b = 25.times do |a|
+  a = 5   
+  puts a
 end
+   
+puts a
+puts b
 
 
-puts letter_count("jonai")
+a = 4
+b = 22
