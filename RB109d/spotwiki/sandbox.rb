@@ -1,13 +1,10 @@
-a = 4
+animal = "dog"
 
-b = 25.times do |a|
-  a = 5   
-  puts a
+loop do |_|
+  animal = "cat"
+  var = "ball"
+  break
 end
-   
-puts a
-puts b
 
-
-a = 4
-b = 22
+puts animal
+puts var
