@@ -12,7 +12,8 @@ end
 
 year = gets.chomp
 loop do
-  if (divisible_by_four(year) == true && divisible_by_one_hundred(year) == true) || (divisible_by_one_hundred(year) == true && divisible_by_four_hundred(year) == true)
+  if divisible_by_four(year) == true && divisible_by_one_hundred(year) == false ||
+    divisible_by_one_hundred(year) == true && divisible_by_four_hundred(year) == true
     puts "its a leap year"
     break
   else
