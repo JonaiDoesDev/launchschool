@@ -411,9 +411,12 @@ loop do
 end
 ```
 
-On `line 1` local variable `i` is initialized and is set to reference the Integer object `10`. On `line 2` the `loop` method is called with a block as an argument, delimited by the do..end. In `line 3` local variable `i` is reassigned  to local variable `i` minus `1` meaning for the first iteration of the loop, local variable `i` is reassigned to Intger object `9`. Since this is in a loop this will keep happening until local variable `i` is referencing integer object `0`. In `line 4` we call the keyword `break`, which breaks out of the loop. We call the keyword `break` with a condition that if local variable `i` is equal to Intger object `0`, we break out of the loop. This code is demonstrating that blocks passed as arguments to a method are able to access local variables that were initialized outside of the block scope. 
+On `line 1` local variable `i` is initialized and is set to reference the Integer object `10`. On `line 2` the `loop` method is called with a block as an argument, delimited by the do..end. In `line 3` local variable `i` is reassigned  to local variable `i` minus `1` meaning for the first iteration of the loop, local variable `i` is reassigned to Intger object `9`. Since this is in a loop this will keep happening until local variable `i` is referencing integer object `0`. In `line 4` we call the keyword `break`, which breaks out of the loop. We call the keyword `break` with a condition that if local variable `i` is equal to Integer object `0`, we break out of the loop. This code is demonstrating that blocks passed as arguments to a method are able to access local variables that were initialized outside of the block scope. 
 
+---
 
+```ruby
+```
 
 
 

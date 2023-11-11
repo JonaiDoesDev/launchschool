@@ -1,10 +1,8 @@
-animal = "dog"
+i = 10
 
-loop do |_|
-  animal = "cat"
-  var = "ball"
-  break
+loop do 
+  puts "jonai"
+  i -= 1
+  break if i == 0
 end
 
-puts animal
-puts var
