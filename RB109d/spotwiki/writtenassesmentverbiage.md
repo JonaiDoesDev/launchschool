@@ -411,12 +411,53 @@ loop do
 end
 ```
 
-On `line 1` local variable `i` is initialized and is set to reference the Integer object `10`. On `line 2` the `loop` method is called with a block as an argument, delimited by the do..end. In `line 3` local variable `i` is reassigned  to local variable `i` minus `1` meaning for the first iteration of the loop, local variable `i` is reassigned to Intger object `9`. Since this is in a loop this will keep happening until local variable `i` is referencing integer object `0`. In `line 4` we call the keyword `break`, which breaks out of the loop. We call the keyword `break` with a condition that if local variable `i` is equal to Integer object `0`, we break out of the loop. This code is demonstrating that blocks passed as arguments to a method are able to access local variables that were initialized outside of the block scope. 
+On `line 1` local variable `i` is initialized and is set to reference the Integer object `10`. On `line 2` the `loop` method is called with a block as an argument, delimited by the do..end. In `line 3` local variable `i` is reassigned  to local variable `i` minus `1` meaning for the first iteration of the loop, local variable `i` is reassigned to Intger object `9`. Since this is in a loop this will keep happening until local variable `i` is referencing integer object `0`. In `line 4` we call the keyword `break`, which breaks out of the loop. We call the keyword `break` with a condition that if local variable `i` is equal to Integer object `0`, we break out of the loop. This code outputs nothing and returns `nil`. This code is demonstrating that blocks passed as arguments to a method are able to access local variables that were initialized outside of the block scope. 
 
 ---
 
 ```ruby
+counter = 0
+
+while counter < 5 do
+	counter += 1
+end 
 ```
+
+This code does not output anything and returns `nil`. On `line 2` we use the control expression `while` with a condition of `counter < 5`. While the local variable `counter` is less than `5`, continue the loop of reassigning `counter` to the current value of `counter` plus `1`. 
+
+---
+
+```ruby
+3.times do |index|
+	puts "Hello!"	
+end
+```
+
+The `#times` method is called on the Integer object `3` and passed a block, delimited by `do..end` as an argument. Within the block we initialize the local variable `index` and call the method `puts` with string object `"Hello!"` as an argument. This outputs the string object `"Hello!"` `3` times and returns 3 which is the amount of iterations completed. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
