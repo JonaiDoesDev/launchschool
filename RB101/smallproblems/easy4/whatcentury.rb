@@ -1,7 +1,6 @@
 def century?(year)
-  if 
-    puts "yes"
-  end
+  year = year.to_s
+  puts year.end_with?("01") 
 end
 
-century?(2001)
+puts century?(2001)
