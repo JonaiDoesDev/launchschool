@@ -1,7 +1,6 @@
 def century?(year)
-  if year.between?(2001, 2021)
-    puts "new century"
-  end 
+  year = year.to_s
+  puts year.end_with?("01") 
 end
 
-century?(2001)
+puts century?(2001)
