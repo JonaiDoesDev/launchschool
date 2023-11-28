@@ -26,3 +26,5 @@ end
 
 
 box("This is a smaller message this is also a longer message")
+
+this is an example
