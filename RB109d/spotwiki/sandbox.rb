@@ -1,3 +1,6 @@
-arr = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
+flintstones = ["Fred", "Barney", "Wilma", "Betty", "Pebbles", "BamBam"]
 
-arr.slice(1, 2)
+hash = {}
+flintstones.each_with_index do |element, index|
+  hash[element] = index
+end
