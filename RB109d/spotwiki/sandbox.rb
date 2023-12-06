@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 competitors = [{name: "Gracie-Leigh Cruz",      height: "5ft 2in",  weight: 129},
                {name: "Suhail Stott",           height: "5ft 7in",  weight: 169},
                {name: "Ava-May Hall",           height: "5ft 7in",  weight: 177},
@@ -19,11 +18,3 @@ end
 
 competitors_id
 
-=======
-def method(string)
-  string.map do |element|
-    element.size
-end
-end
-p method("to be to not to be")
->>>>>>> 08d686f608af804c9732fa1c47c17893379acd0f
