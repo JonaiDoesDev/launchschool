@@ -2,6 +2,4 @@ todo_lists = [{id: 1, list_name: 'Groceries', todos: [{ id: 1, name: 'Bread', co
 
 todo_lists[todos][2][name] = "Orange Juice"
 
-testing something
-
-testing
+testing another thing
