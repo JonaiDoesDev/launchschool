@@ -12,13 +12,13 @@ end
 
 
 def leap_year?(number)
-if divisible_by_4(number) == true && divisible_by_100(number) == false
-  puts "#{number} is a leap year"
-elsif (divisible_by_4(number) == true && divisible_by_100(number) == true) && divisible_by_400(number) == true
-  puts "#{number} is a leap year"
-else
-  puts "#{number} is not a leap year" 
-end
+  if divisible_by_4(number) == true && divisible_by_100(number) == false
+    puts "#{number} is a leap year"
+  elsif (divisible_by_4(number) == true && divisible_by_100(number) == true) && divisible_by_400(number) == true
+    puts "#{number} is a leap year"
+  else
+    puts "#{number} is not a leap year" 
+  end
 end
 
 
