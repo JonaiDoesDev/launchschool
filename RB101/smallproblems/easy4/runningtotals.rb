@@ -19,8 +19,15 @@
 
 # p running_total([2, 5, 13])
 
+
 def running_total(array)
-  array.reduce([], :+)
+  array.reduce([]) do |new_array, element|
+    if new_array.empty? 
+      new_array << element
+    else
+      new_array << new_array.last + element
+    end
+end
 end
 
-puts running_total([2, 5, 13])
+p running_total([2, 5, 13])
