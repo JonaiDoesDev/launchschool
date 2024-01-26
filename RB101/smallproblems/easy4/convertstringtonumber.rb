@@ -5,9 +5,9 @@ digits = []
 string.chars.map do |char|
   digits << numbers[char]
 end
-puts digits.join
+digits.join
 end
 
 
 
-string_to_integer('570')
+puts string_to_integer('570')
