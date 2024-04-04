@@ -1,4 +1,4 @@
-ages = { "Herman" => 32, "Lily" => 30, "Grandpa" => 402, "Eddie" => 10 }
+title = "Flintstone Family Members"
 
 
-ages.key?("Spot")
+title.center(40)
