@@ -11,16 +11,27 @@ def swap(words)
 end
 
 =begin
-In line 1, we are defining a method named swap_first_last_chatacters that takes a parameter. The 
-method is delimted by do..end. Inside the method on line 2, we are returning the substring of self specified 
-  by the argument, in this case the letter at index 0 whih is
+In line 1, we are defining a method named swap_first_last_chatacters that
+takes a parameter word. The method is delimted by do..end. Inside the method 
+on line 2, we are accessing the character at string character with index of 0
+and string character with index of -1 which is always the last character in a string.
+We are then telling Ruby to exchange and assign those values with the string character at the 
+end of the string and the string character at the beginning of the string. This will swap 
+our first and last letters for each other. On line 3 we return the word and since 
+what we did on line 2 is destructive, it returns the word how we need it.
 
+On line 6 we define another method with the name swap and it also takes a parameter words
+on line 7 we initialize a variable with the name result. we also use our words parameter
+and call the split method on it which returns an array of each word we then call map
+to iterate over each word and return a new array. we set the block parameter as word
+On line 8 we call our swap_first_last_characters method with the argument word. This 
+creates a new array where all the words in that array have their first and last letter swapped.
+We assign this array to the results variable.
 
-
+On line 10 we call the join method with an argument of ' ' on result to join all the
+array words together and adding a space between each word. 
 
 =end
-
-
 
 
 
