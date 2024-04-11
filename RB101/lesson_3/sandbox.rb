@@ -1,8 +1,23 @@
-def swap(string)
-  individual_word = string.split
-  individual_word.each do |word|
-    word.
+# def swap(string)
+#   individual_word = string.split
+#   individual_word.each do |word|
+#     word.
+# end
+
+def swap_first_last_character(word)
+  word[0], word[-1] = word[-1], word[0]
+  word
 end
+
+def swap(words)
+  result = words.split.map do |word|
+    swap_first_last_character(word)
+end
+
+p result.join(' ')
+end
+
+swap("Jonai is awesome")
 
 
 =begin
@@ -25,10 +40,7 @@ Algorithm:
 1.  break down string into seperate words and store in an array
 2. iterate through the array so that you have access to each word individually
 3. iterate through the word itself to have access to the letters. #chars
-4. move first letter to the end (-1)
+4. move first letter to the end (-1), remember you can access a letter in a string like so word[0]
 5. move last letter to the front (0)
-  reverse the word, then only reverse again the mittle of it.
-  Look for a built in method that might handle this, ie gsub? 
-
 =end
 
