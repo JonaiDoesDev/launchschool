@@ -1,10 +1,10 @@
 
 def cleanup(string)
-  alphabet = Array("a".."z")
+  alphabet = ("a".."z").to_a
   characters = string.chars
   non_alpha = []
   characters.each do |char|
-    if alphabet.include?(char)
+    if alphabet.include?(char.downcase)
       non_alpha << char
     else
       non_alpha << ' ' unless non_alpha.last == ' '
@@ -14,7 +14,7 @@ def cleanup(string)
 end
 
 
-p cleanup("---what's my +*& line?")
+p cleanup("Wha[t&'s u_p.      Doc?")
 
 
 =begin
