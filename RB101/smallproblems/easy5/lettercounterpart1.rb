@@ -1,24 +1,4 @@
 
-# def letter_counter(string)
-# hash = {
-#   4 => 1
-# }
-
-# string_array = string.split
-# string_array.each do |word|
-#   if hash.keys.include?(4)
-#     puts "hello"
-#   end
-# end
-
-# end
-
-
-# letter_counter('Four score and seven.')
-
-
-
-
 def word_sizes(string)
   # separate_words = string.split
   counting_hash = {}
