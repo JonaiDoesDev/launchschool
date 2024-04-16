@@ -1,17 +1,13 @@
-ALPHABET = ("a".."z").to_a
-
-
-def clean_up(string)
-  string.chars.select do |element|
-  ALPHABET.include?(element.downcase)
-  end.join(' ')
-end
 
 def word_sizes(string)
-  # separate_words = string.split
+  clean_word =''
+  string.split.each do |element|
+    clean_word = element.delete('^A-Za-z')
+  end
+  p clean_word
   counting_hash = {}
 
-  string.split.each do |word|
+  clean_word.split.each do |word|
     if counting_hash.key?(word.length)
       counting_hash[word.length] = counting_hash[word.length] + 1
     else
@@ -22,7 +18,7 @@ def word_sizes(string)
 end
 
 
-# p word_sizes('Four score and seven.')
+p word_sizes('Four score and seven.')
 p word_sizes('Hey diddle diddle, the cat and the fiddle!')
 p word_sizes("What's up doc?")
 p word_sizes('')
