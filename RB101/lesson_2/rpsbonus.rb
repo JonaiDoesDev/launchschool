@@ -1,4 +1,6 @@
-VALID_CHOICES = ["rock", "paper", "scissors"]
+VALID_CHOICES = ["rock", "paper", "scissors", "lizard", "spock"]
+
+
 
 def prompt(message)
   puts "=> #{message}"
